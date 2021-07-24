@@ -69,4 +69,3 @@ alias upgrade="sudo apt upgrade && sudo apt autoremove"
 alias fupgrade="update && upgrade"
 
 alias i3conf="vim $HOME/.config/i3/config"
-alias dhscd="cd $HOME/Work/Development/php/laravel/domainshook"
