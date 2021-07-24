@@ -1,0 +1,71 @@
+alias cls=clear
+alias py=python3
+alias python=python3
+alias pa="php artisan"
+alias vim=nvim
+alias vi=nvim
+alias svi='sudo vi'
+alias ydl=youtube-dl
+
+alias cpy="xclip -selection c"
+
+## Colorize the ls output ##
+alias ls='ls --color=auto'
+
+## Use a long listing format ##
+alias ll='ls -la'
+
+## Show hidden files ##
+alias l.='ls -d .* --color=auto'
+
+## get rid of command not found ##
+alias cd..='cd ..'
+
+## a quick way to get out of current directory ##
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
+
+# handy short cuts #
+alias h='history'
+alias j='jobs -l'
+
+alias path='echo -e ${PATH//:/\\n}'
+alias now='date +"%T"'
+alias nowtime=now
+alias nowdate='date +"%d-%m-%Y"'
+
+# do not delete / or prompt if deleting more than 3 files at a time #
+alias rm='rm -I --preserve-root'
+
+# confirmation #
+alias mv='mv -i'
+alias cp='cp -i'
+alias ln='ln -i'
+
+# Parenting changing perms on / #
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+
+# Open .zshrc to be edited in VS Code
+alias change="vim ~/.zshrc"
+# Re-run source command on .zshrc to update current terminal session with new settings
+alias ubash="source ~/.zshrc"
+alias ebash="vim ~/.zshrc"
+alias ealias="vim ~/.aliases"
+
+alias lemp="$HOME/Work/scripts/./start-lemp.sh"
+alias slemp="$HOME/Work/scripts/./stop-lemp.sh"
+
+alias hs="history | cut -c 8- | sort | uniq | fzf | tr -d '\n' | cpy"
+alias update="sudo apt update && apt list --upgradable"
+alias upgrade="sudo apt upgrade && sudo apt autoremove"
+alias fupgrade="update && upgrade"
+
+alias i3conf="vim $HOME/.config/i3/config"
+alias dhscd="cd $HOME/Work/Development/php/laravel/domainshook"
