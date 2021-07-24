@@ -6,6 +6,7 @@ alias vim=nvim
 alias vi=nvim
 alias svi='sudo vi'
 alias ydl=youtube-dl
+alias tmux='tmux -u'
 
 alias cpy="xclip -selection c"
 
