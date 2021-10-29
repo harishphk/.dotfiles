@@ -13,3 +13,5 @@ set noswapfile
 set nobackup
 set scrolloff=8
 set signcolumn=yes
+set path+=**
+set wildmenu

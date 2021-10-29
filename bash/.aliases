@@ -5,8 +5,11 @@ alias pa="php artisan"
 alias vim=nvim
 alias vi=nvim
 alias svi='sudo vi'
-alias ydl=youtube-dl
+alias ydl="youtube-dl -f 'bestvideo[height<=1080]+bestaudio'"
 alias tmux='tmux -u'
+alias fd=fdfind
+alias uvpn="sudo wg-quick up wg0"
+alias dvpn="sudo wg-quick down wg0"
 
 alias cpy="xclip -selection c"
 
@@ -24,11 +27,11 @@ alias cd..='cd ..'
 
 ## a quick way to get out of current directory ##
 alias ..='cd ..'
-alias ...='cd ../../'
-alias ...='cd ../../../'
-alias ....='cd ../../../../'
-alias .....='cd ../../../../'
-alias .4='cd ../../../../'
+alias ...='cd ../..'
+alias ...='cd ../../..'
+alias ....='cd ../../../..'
+alias .....='cd ../../../..'
+alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
 # handy short cuts #
@@ -39,6 +42,7 @@ alias path='echo -e ${PATH//:/\\n}'
 alias now='date +"%T"'
 alias nowtime=now
 alias nowdate='date +"%d-%m-%Y"'
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # do not delete / or prompt if deleting more than 3 files at a time #
 alias rm='rm -I --preserve-root'
@@ -60,10 +64,11 @@ alias ubash="source ~/.zshrc"
 alias ebash="vim ~/.zshrc"
 alias ealias="vim ~/.aliases"
 
-alias lemp="$HOME/Work/scripts/./start-lemp.sh"
-alias slemp="$HOME/Work/scripts/./stop-lemp.sh"
-
 alias hs="history | cut -c 8- | sort | uniq | fzf | tr -d '\n' | cpy"
+alias fdir="fd -Hp -t d | fzf"
+alias cfdir="fdir | cpy"
+alias ff="fd -Hp -t f | fzf"
+alias cff="ff | cpy"
 alias update="sudo apt update && apt list --upgradable"
 alias upgrade="sudo apt upgrade && sudo apt autoremove"
 alias fupgrade="update && upgrade"

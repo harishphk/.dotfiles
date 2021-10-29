@@ -143,9 +143,15 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+Tab workspace back_and_forth
-bindsym $mod+d exec rofi -show drun -lines 5 -show-icons -display-drun "Run"
-bindsym $mod+Shift+d exec rofi -show window -show-icons -display-window "Switch to"
+bindsym $mod+d exec "~/.config/rofi/launchers/colorful/launcher.sh"
+bindsym $mod+p exec "~/.config/rofi/powermenu/powermenu.sh"
+bindsym $mod+Shift+d exec rofi -show window
 bindsym $mod+period exec --no-startup-id rofimoji --skin-tone light --action clipboard
 
 
@@ -203,11 +209,10 @@ bar {
 hide_edge_borders both
 
 # Shortcuts for apps
-bindsym $mod+z exec "copyq menu"
-
 bindsym --release Print exec "flameshot gui"
 bindsym --release Ctrl+Print exec "flameshot full -p ~/Pictures/Screenshots"
 bindsym --release Ctrl+Shift+Print exec "flameshot gui -p /home/harish/Pictures/Screenshots"
+bindsym $mod+t [class="Todoist"] scratchpad show 
 
 # Floating Windows
 for_window [class="^.*"] border pixel 1
@@ -216,24 +221,26 @@ for_window [window_role="bubble"]                   floating enable
 for_window [window_role="task_dialog"]              floating enable
 for_window [window_role="Preferences"]              floating enable
 for_window [window_type="dialog"]                   floating enable
-for_window [window_type="menu"]                     floating enableZ
+for_window [window_type="menu"]                     floating enable
 for_window [class="Newton Mail" title="Compose"]    floating enable
 for_window [class="Todoist"]                        floating enable
 for_window [class="Calculator"]                    	floating enable
+for_window [class="Telegram"]                    	floating enable
+for_window [class="Gnome-calculator"]             	floating enable
 
 
 # Default Workspaces
+assign [class="Microsoft-edge-beta"] $ws1
 assign [class="Newton Mail"] $ws3
 assign [class="Todoist"] $ws4
-assign [class="Microsoft-edge-beta"] $ws1
-assign [class="Google-chrome"] $ws6
+assign [class="Telegram"] $ws4
 assign [class="Code"] $ws5
+assign [class="Google-chrome"] $ws6
 assign [class="Standard Notes"] $ws7
 
 
 # Statup
 exec_always feh --bg-fill /home/harish/Pictures/Wallpapers/wall2.jpg
+#exec_always compton -f
 exec --no-startup-id redshift-gtk
 exec --no-startup-id copyq
-# exec --no-startup-id:q compton -f
-
